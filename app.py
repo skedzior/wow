@@ -12,10 +12,9 @@ client = ftx.FtxClient('mt6q3o7aheFH89_GMdZUZXf8JbLfJ8oynNRWOIbM','inl1LzA10irND
 def hello():
     return 'helol'
 
-@app.route("/positions")
+@app.route("/test")
 def get_positions():
-    client = ftx.FtxClient('mt6q3o7aheFH89_GMdZUZXf8JbLfJ8oynNRWOIbM','inl1LzA10irNDSb17wABqwFVot0mkx84QumaAsiL', 'test')
-    return {'positions':client.get_positions()}
+    return { client }
 
 @app.route("/wallet")
 def get_wallet_info():
