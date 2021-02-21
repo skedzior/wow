@@ -14,10 +14,6 @@ def hello():
 
 @app.route("/test")
 def get_balances():
-    data = json.loads(client.get_balances())
     ff = 'd'
-    for b in data: 
-        if b['coin'] == 'ETH':
-            ff = b['free']
     return ff
 
