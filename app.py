@@ -14,11 +14,7 @@ def hello():
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
-    if data['side'].upper() == "BUY":
-        client.place_order('ETH/USD', 'buy', None, 1, 'market')
-        return 'buy'
-    else:
-        client.place_order('ETH/USD', 'sell', None, 0.005, 'market')
-        return 'sell'
+    client.place_order('ETH/USD', 'sell', None, 0.005, 'market')
+    return 'sell'
 
 
