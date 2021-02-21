@@ -14,7 +14,12 @@ def hello():
 
 @app.route("/test")
 def get_positions():
-    return { client }
+    data = json.loads(client.get_positions())
+    ff = 'd'
+    for b in data: 
+        if b['coin'] == 'ETH':
+            ff = b['free']
+    return ff
 
 @app.route("/wallet")
 def get_wallet_info():
