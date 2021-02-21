@@ -24,6 +24,6 @@ def webhook():
         for b in balances: 
             if b['coin'] == 'ETH':
                 client.place_order('ETH/USD', 'sell', None, b['free'], 'market')
-                return 'sell
+                return 'sell'
 
 
