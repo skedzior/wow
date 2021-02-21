@@ -1,7 +1,3 @@
 flask
-requests 
-ciso8601
+ftx
 gunicorn
-urllib.parse
-typing
-hmac
