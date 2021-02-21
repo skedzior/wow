@@ -1,8 +1,7 @@
-import json
-from flask import Flask, request, jsonify
+import json, config
+from flask import Flask, request, jsonify, render_template
 from binance.client import Client
 from binance.enums import *
-
 
 app = Flask("__main__")
 
@@ -24,7 +23,7 @@ def order(side, quantity, symbol, order_type=ORDER_TYPE_MARKET):
 
 @app.route('/')
 def welcome():
-    return render_template('index.html')
+    return 'heeeeeeey'
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
