@@ -9,9 +9,8 @@ app = Flask("__main__")
 client = ftx.FtxClient('mt6q3o7aheFH89_GMdZUZXf8JbLfJ8oynNRWOIbM','inl1LzA10irNDSb17wABqwFVot0mkx84QumaAsiL', 'test')
 
 @app.route("/")
-def get_positions():
-    client = ftx.FtxClient('mt6q3o7aheFH89_GMdZUZXf8JbLfJ8oynNRWOIbM','inl1LzA10irNDSb17wABqwFVot0mkx84QumaAsiL', 'test')
-    return {'helol', client}
+def hello():
+    return 'helol'
 
 @app.route("/positions")
 def get_positions():
