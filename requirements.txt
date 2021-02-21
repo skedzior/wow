@@ -2,7 +2,6 @@ flask
 requests 
 ciso8601
 gunicorn
-json
 urllib.parse
 typing
 hmac
