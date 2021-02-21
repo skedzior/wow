@@ -12,8 +12,18 @@ client = ftx.FtxClient('mt6q3o7aheFH89_GMdZUZXf8JbLfJ8oynNRWOIbM','inl1LzA10irND
 def hello():
     return 'helol'
 
-@app.route("/test")
-def get_balances():
-    ff = 'd'
-    return ff
+@app.route("/webhook", methods=['POST'])
+def webhook():
+    print(request.data)
+    data = json.loads(request.data)
+
+    if data['side'].upper() == "BUY":
+        client.place_order('ETH/USD', 'buy', None, 1, 'market')
+        return 'buy'
+    else:
+        for b in balances: 
+            if b['coin'] == 'ETH':
+                client.place_order('ETH/USD', 'sell', None, b['free'], 'market')
+                return 'sell
+
 
